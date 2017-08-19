@@ -1,5 +1,13 @@
-spy_name = "harsh"
-spy_age = 21
-spy_salutation = "mr."
-spy_rating = 4.7
+#details of default user.
+spy{
+    'name' : 'Bond',
+    'salutation' : 'Mr.',
+    'age' : 24,
+    'rating' : 4.7,
+    'is_online' : True
+}
+
+print spy;
+
+
 
