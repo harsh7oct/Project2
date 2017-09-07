@@ -1,5 +1,5 @@
 #details of default user.
-spy{
+spy={
     'name' : 'Bond',
     'salutation' : 'Mr.',
     'age' : 24,

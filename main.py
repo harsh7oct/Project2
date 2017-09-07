@@ -8,14 +8,14 @@ print "Let\'s get started"
 question = "Do you continue as mr. "+spy['salutation']+" "+spy['name']+ ' (y/n) '
 existing=raw_input(question)
 #check validating user input
-if (existing=='Y' or existing=='y'):
+if (existing.upper()=='Y'):
     spy['name']=spy['salutation']+" "+spy['name']
     start_chat(spy['name'],spy['rating'],spy['is_online']);
 
 elif (existing=='N' or existing=='n'):
     #new users code
     spy['name'] = raw_input("What is your name ?")
-    if len(spy_name) > 0:
+    if len(spy['name']) > 0:
         if spy['name'].isalpha():
             print "ALRIGHT" + spy['name'] + " I WOULD LIKE TO KNOW better before to proceed further.."
             spy['salutation'] = raw_input("What should we call you? Mr. or Ms. : ")
