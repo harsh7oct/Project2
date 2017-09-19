@@ -4,6 +4,7 @@ from start_chat import start_chat
 
 
 
+
 print "Let\'s get started"
 question = "Do you continue as mr. "+spy['salutation']+" "+spy['name']+ ' (y/n) '
 existing=raw_input(question)

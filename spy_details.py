@@ -7,7 +7,7 @@ spy={
     'is_online' : True
 }
 
-print spy;
+
 
 
 

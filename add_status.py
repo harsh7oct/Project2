@@ -9,11 +9,13 @@ def add_status(status_message):
 
     if default.upper()=='N':
         new_status_messge = raw_input("what status message do you want to set?")
+
+
         if len(new_status_messge)>0:
             updated_status_message = new_status_messge
             STATUS_MESSAGES.append(updated_status_message)
 
-    elif default.upper()='Y':
+    elif default.upper()=='Y':
         item_position=1
         for message in STATUS_MESSAGES:
             print item_position+" "+message
