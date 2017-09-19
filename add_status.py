@@ -1,27 +1,37 @@
-def add_status(status_message):
-    STATUS_MESSAGES=[]
-    #logic
-    if (status_message !=None):
-        print  "your status is"+ status_message+"\n"
-    else:
-        print "no status \n"
-    default = raw_input("do you want to select older message (y/n)?")
+from termcolor import colored
+STATUS_MESSAGES = ["Spy mode ON", "Busy, Call If Urgent"]
+def add_status():
+    tempcheck=True#temporary variable
+    wholecheck=True#temporary variable
+    while wholecheck:
+        default = raw_input("Do you want to select from older status (y/n)? ")
+        if default.upper() == "N":
+            wholecheck=False
+            #Setting new Status Message
+            while tempcheck:
+                new_status_message = raw_input("What status message do you want to set? ")
+                if len(new_status_message)>0:
+                    updated_status_message = new_status_message
+                    STATUS_MESSAGES.append(updated_status_message)
+                    tempcheck=False
+                else:
+                    print colored("Please enter a valid status ",'red')
 
-    if default.upper()=='N':
-        new_status_messge = raw_input("what status message do you want to set?")
+        elif default.upper() == "Y":
+            wholecheck=False
+            while tempcheck:
+                item_position = 1
+                #selecting from list(Status)
+                for message in STATUS_MESSAGES:
+                    print str(item_position) +". "+ str(message)
+                    item_position = item_position + 1
+                message_selection = int(raw_input("Use Number To Select Desired Status\nEnter Choice:  "))
+                if len(STATUS_MESSAGES) >= message_selection:
+                    updated_status_message = STATUS_MESSAGES[message_selection - 1]
+                    tempcheck=False
+                else:
+                    print colored("Select a proper status",'red')
 
-
-        if len(new_status_messge)>0:
-            updated_status_message = new_status_messge
-            STATUS_MESSAGES.append(updated_status_message)
-
-    elif default.upper()=='Y':
-        item_position=1
-        for message in STATUS_MESSAGES:
-            print item_position+" "+message
-            item_position=item_position+1
-        message_selection = int(raw_input("\n choose from above message"))
-        if len(STATUS_MESSAGES)>=message_selection:
-            updated_status_message = STATUS_MESSAGES[message_selection-1]
-
+        else:
+            print colored("Wrong choice. Please try again",'red')
     return updated_status_message
